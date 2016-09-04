@@ -15,9 +15,3 @@ COPY . /app
 
 # run python script when container lands on device
 CMD ["python", "/app/hello.py"]
-
-#See what the hell happens when I try to chain images for fun
-
-FROM httpd:2.4
-
-COPY ./public-html/ /usr/local/apache2/htdocs/
