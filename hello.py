@@ -1,3 +1,3 @@
 #!/usr/bin/python
 
-print "hello python! Fifth Update on All using Sync."
+print "hello python! Sixth Update on All using Sync."
