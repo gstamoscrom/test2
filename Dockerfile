@@ -19,11 +19,11 @@ COPY . /app
 #Copy Index
 COPY index.html /var/www/html/index.html
 
+# By default start up apache in the foreground, override with /bin/bash for interative.
+CMD /usr/sbin/apache2ctl -D FOREGROUND
 
 # run python script when container lands on device
 CMD ["python", "/app/hello.py"]
 
-# By default start up apache in the foreground, override with /bin/bash for interative.
-CMD /usr/sbin/apache2ctl -D FOREGROUND
 
 
