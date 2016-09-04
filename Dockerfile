@@ -16,6 +16,9 @@ EXPOSE 80
 # copy current directory into /app
 COPY . /app
 
+#Copy Index
+COPY index.html /var/www/html/index.html
+
 
 # run python script when container lands on device
 CMD ["python", "/app/hello.py"]
