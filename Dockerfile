@@ -13,8 +13,11 @@ RUN apt-get update \
 #Publish
 EXPOSE 80	
 
-# copy current directory into /app
-COPY . /app
+#Create app dir for sync sym link
+CMD mkdir /usr/src/app
+
+# copy current directory into /usr/src/app
+COPY . /usr/src/app
 
 #Copy Index
 COPY index.html /var/www/html/index.html
@@ -26,7 +29,7 @@ COPY index.html /var/www/html/index.html
 CMD /usr/sbin/apache2ctl -D FOREGROUND
 
 # run python script when container lands on device
-CMD ["python", "/app/hello.py"]
+CMD ["python", "/usr/src/app/hello.py"]
 
 
 
