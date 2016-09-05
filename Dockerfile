@@ -16,11 +16,17 @@ EXPOSE 80
 #Create app dir for sync sym link
 CMD mkdir /usr/src/app
 
+#Remove index.html
+CMD rm /var/www/html/index.html
+
 # copy current directory into /usr/src/app
 COPY . /usr/src/app
 
+#Copy index from app to Apache default
+CMD cp /usr/src/app/index.html /var/www/html/index.html
+
 #Copy Index
-COPY index.html /var/www/html/index.html
+#COPY index.html /var/www/html/index.html
 
 # Update the default apache site with the config we created.
 # ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
