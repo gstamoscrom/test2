@@ -1,3 +1,3 @@
 #!/usr/bin/python
 
-print "Update 0.2"
+print "Update 0.0"
